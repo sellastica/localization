@@ -1,5 +1,5 @@
 <?php
-namespace Core\Domain\Model\Localization;
+namespace Sellastica\Localization\Model;
 
 class TimeZone
 {
