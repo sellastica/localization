@@ -7,7 +7,9 @@ use Sellastica\Twig\Model\ProxyConverter;
 
 class Country implements IProxable
 {
-	/** @var array ISO 3166-1 */
+	/**
+	 * @var array ISO 3166-1
+	 */
 	private static $countries = [
 		'AF' => 'system.countries.afghanistan',
 		'AX' => 'system.countries.aland_islands',
@@ -256,10 +258,46 @@ class Country implements IProxable
 		'ZW' => 'system.countries.zimbabwe',
 	];
 
+	/**
+	 * @var array European Union country codes
+	 * @see https://www.gov.uk/guidance/vat-eu-country-codes-vat-numbers-and-vat-in-other-languages
+	 */
+	private static $euCountries = [
+		'AT',
+		'BE',
+		'BG',
+		'HR',
+		'CY',
+		'CZ',
+		'DK',
+		'EE',
+		'FI',
+		'FR',
+		'DE',
+		'EL',
+		'HU',
+		'IE',
+		'IT',
+		'LV',
+		'LT',
+		'LU',
+		'MT',
+		'NL',
+		'PL',
+		'PT',
+		'RO',
+		'SK',
+		'SI',
+		'ES',
+		'SE',
+	];
+
 	/** @var string */
 	private $title;
 	/** @var string */
 	private $code;
+
+
 
 	/**
 	 * @param string $code
@@ -293,6 +331,14 @@ class Country implements IProxable
 	public function getTitleEn(): string
 	{
 		return ucwords(str_replace('_', ' ', $this->title));
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isEuCountry(): bool
+	{
+		return in_array($this->code, self::$euCountries);
 	}
 
 	/**
@@ -351,5 +397,13 @@ class Country implements IProxable
 	public static function getCountries(): array
 	{
 		return self::$countries;
+	}
+
+	/**
+	 * @return array
+	 */
+	public static function getEuCountries(): array
+	{
+		return self::$euCountries;
 	}
 }
