@@ -1,14 +1,16 @@
 <?php
 namespace Sellastica\Localization\Model;
 
-use Sellastica\Localization\Presentation\LocalizationProxy;
-use Sellastica\Twig\Model\IProxable;
-use Sellastica\Twig\Model\ProxyConverter;
-
-class Localization implements IProxable
+/**
+ * Language list by ISO 639-1
+ * Date and time format by ISO 8601
+ * @see https://en.wikipedia.org/wiki/Date_format_by_country
+ */
+class Localization implements \Sellastica\Twig\Model\IProxable
 {
 	/** @var array */
 	private static $localizations = [
+		//Czech
 		'cs_CZ' => [
 			'language' => 'cs',
 			'date_format' => 'j.n.Y',
@@ -17,6 +19,7 @@ class Localization implements IProxable
 			'title' => 'system.localizations.cs_cz',
 			'language_title' => 'system.localizations.languages.cs',
 		],
+		//English
 		'en_US' => [
 			'language' => 'en',
 			'date_format' => 'n/j/Y',
@@ -25,6 +28,16 @@ class Localization implements IProxable
 			'title' => 'system.localizations.en_us',
 			'language_title' => 'system.localizations.languages.en',
 		],
+		//Estonian
+		'et_EE' => [
+			'language' => 'et',
+			'date_format' => 'j.n.Y',
+			'time_format' => 'G:i',
+			'time_format_with_seconds' => 'G:i:s',
+			'title' => 'system.localizations.et_ee',
+			'language_title' => 'system.localizations.languages.et',
+		],
+		//French
 		'fr_FR' => [
 			'language' => 'fr',
 			'date_format' => 'j/n/Y',
@@ -33,6 +46,34 @@ class Localization implements IProxable
 			'title' => 'system.localizations.fr_fr',
 			'language_title' => 'system.localizations.languages.fr',
 		],
+		//Croatian
+		'hr_HR' => [
+			'language' => 'hr',
+			'date_format' => 'n/j/Y',
+			'time_format' => 'G:i',
+			'time_format_with_seconds' => 'G:i:s',
+			'title' => 'system.localizations.hr_hr',
+			'language_title' => 'system.localizations.languages.hr',
+		],
+		//Hungarian
+		'hu_HU' => [
+			'language' => 'hu',
+			'date_format' => 'Y.n.j',
+			'time_format' => 'G:i',
+			'time_format_with_seconds' => 'G:i:s',
+			'title' => 'system.localizations.hu_hu',
+			'language_title' => 'system.localizations.languages.hu',
+		],
+		//Lithuanian
+		'lt_LT' => [
+			'language' => 'lt',
+			'date_format' => 'j.n.Y',
+			'time_format' => 'G:i',
+			'time_format_with_seconds' => 'G:i:s',
+			'title' => 'system.localizations.lt_lt',
+			'language_title' => 'system.localizations.languages.lt',
+		],
+		//Russian
 		'ru_RU' => [
 			'language' => 'ru',
 			'date_format' => 'j.n.Y',
@@ -41,6 +82,7 @@ class Localization implements IProxable
 			'title' => 'system.localizations.ru_ru',
 			'language_title' => 'system.localizations.languages.ru',
 		],
+		//Slovak
 		'sk_SK' => [
 			'language' => 'sk',
 			'date_format' => 'j.n.Y',
@@ -49,14 +91,28 @@ class Localization implements IProxable
 			'title' => 'system.localizations.sk_sk',
 			'language_title' => 'system.localizations.languages.sk',
 		],
+		//Slovenian
+		'sl_SI' => [
+			'language' => 'sl',
+			'date_format' => 'j.n.Y',
+			'time_format' => 'G:i',
+			'time_format_with_seconds' => 'G:i:s',
+			'title' => 'system.localizations.sl_si',
+			'language_title' => 'system.localizations.languages.sl',
+		],
 	];
 	/** @var array */
 	private static $languages = [
 		'cs' => 'cs_CZ',
 		'en' => 'en_US',
+		'et' => 'et_EE',
 		'fr' => 'fr_FR',
+		'hr' => 'hr_HR',
+		'hu' => 'hu_HU',
+		'lt' => 'lt_LT',
 		'ru' => 'ru_RU',
 		'sk' => 'sk_SK',
+		'sl' => 'sl_SI',
 	];
 
 	/** @var string */
@@ -187,9 +243,11 @@ class Localization implements IProxable
 	/**
 	 * @return \Sellastica\Localization\Presentation\LocalizationProxy
 	 */
-	public function toProxy(): LocalizationProxy
+	public function toProxy(): \Sellastica\Localization\Presentation\LocalizationProxy
 	{
-		return ProxyConverter::convert($this, LocalizationProxy::class);
+		return \Sellastica\Twig\Model\ProxyConverter::convert(
+			$this, \Sellastica\Localization\Presentation\LocalizationProxy::class
+		);
 	}
 
 	/**
