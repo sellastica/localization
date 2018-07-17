@@ -119,6 +119,7 @@ class Localization implements \Sellastica\Twig\Model\IProxable
 		'hr' => 'hr_HR',
 		'hu' => 'hu_HU',
 		'lt' => 'lt_LT',
+		'lv' => 'lv_LV',
 		'ru' => 'ru_RU',
 		'sk' => 'sk_SK',
 		'sl' => 'sl_SI',
