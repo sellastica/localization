@@ -73,6 +73,15 @@ class Localization implements \Sellastica\Twig\Model\IProxable
 			'title' => 'system.localizations.lt_lt',
 			'language_title' => 'system.localizations.languages.lt',
 		],
+		//Latvian
+		'lv_LV' => [
+			'language' => 'lv',
+			'date_format' => 'j.n.Y',
+			'time_format' => 'G:i',
+			'time_format_with_seconds' => 'G:i:s',
+			'title' => 'system.localizations.lv_lv',
+			'language_title' => 'system.localizations.languages.lv',
+		],
 		//Russian
 		'ru_RU' => [
 			'language' => 'ru',
