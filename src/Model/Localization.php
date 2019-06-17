@@ -82,6 +82,15 @@ class Localization implements \Sellastica\Twig\Model\IProxable
 			'title' => 'system.localizations.lv_lv',
 			'language_title' => 'system.localizations.languages.lv',
 		],
+		//Polish
+		'pl_PL' => [
+			'language' => 'pl',
+			'date_format' => 'j.n.Y',
+			'time_format' => 'G:i',
+			'time_format_with_seconds' => 'G:i:s',
+			'title' => 'system.localizations.pl_pl',
+			'language_title' => 'system.localizations.languages.pl',
+		],
 		//Russian
 		'ru_RU' => [
 			'language' => 'ru',
@@ -120,6 +129,7 @@ class Localization implements \Sellastica\Twig\Model\IProxable
 		'hu' => 'hu_HU',
 		'lt' => 'lt_LT',
 		'lv' => 'lv_LV',
+		'pl' => 'pl_PL',
 		'ru' => 'ru_RU',
 		'sk' => 'sk_SK',
 		'sl' => 'sl_SI',
