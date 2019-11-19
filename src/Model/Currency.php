@@ -300,6 +300,22 @@ class Currency implements IProxable
 	}
 
 	/**
+	 * @return bool
+	 */
+	public function isEur(): bool
+	{
+		return $this->code === 'EUR';
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isCzk(): bool
+	{
+		return $this->code === 'CZK';
+	}
+
+	/**
 	 * @return \Sellastica\Localization\Presentation\CurrencyProxy
 	 */
 	public function toProxy(): CurrencyProxy
