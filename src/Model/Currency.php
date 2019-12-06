@@ -300,6 +300,14 @@ class Currency implements IProxable
 	}
 
 	/**
+	 * @return Currency
+	 */
+	public static function eur(): Currency
+	{
+		return self::from('EUR');
+	}
+
+	/**
 	 * @return bool
 	 */
 	public function isEur(): bool
@@ -316,11 +324,11 @@ class Currency implements IProxable
 	}
 
 	/**
-	 * @return \Sellastica\Localization\Presentation\CurrencyProxy
+	 * @return Currency
 	 */
-	public function toProxy(): CurrencyProxy
+	public static function czk(): Currency
 	{
-		return ProxyConverter::convert($this, CurrencyProxy::class);
+		return self::from('CZK');
 	}
 
 	/**
@@ -379,5 +387,13 @@ class Currency implements IProxable
 		}
 
 		return $currencies;
+	}
+
+	/**
+	 * @return \Sellastica\Localization\Presentation\CurrencyProxy
+	 */
+	public function toProxy(): CurrencyProxy
+	{
+		return ProxyConverter::convert($this, CurrencyProxy::class);
 	}
 }
