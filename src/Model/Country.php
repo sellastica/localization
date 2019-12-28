@@ -367,6 +367,22 @@ class Country implements IProxable
 	}
 
 	/**
+	 * @return Country
+	 */
+	public static function cz(): Country
+	{
+		return self::from('CZ');
+	}
+
+	/**
+	 * @return Country
+	 */
+	public static function sk(): Country
+	{
+		return self::from('SK');
+	}
+
+	/**
 	 * @param string $code
 	 * @return Country
 	 * @throws \InvalidArgumentException If country code does not exist
